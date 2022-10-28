@@ -1,18 +1,17 @@
-ukr = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"
-eng = "abcdefghiklmnopqrstvxyz"
+symbols = "абвгґдеєжзиіїйклмнопрстуфхцчшщьюяабвгґдеєжзиіїйклмнопрстуфхцчшщьюяabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz123456789123456789"
 while True:
-    word: str = input("ведіть слово: ")
+    word: str = input("Ведіть слово: ")
     key = 1
     word_low = word.lower()
     cio = ""
     for letter in word_low:
-        position = ukr.find(letter)
+        position = symbols.find(letter)
         new_position = position + key
-        if letter in ukr:
-            if new_position > 32:
-                new_position = new_position - 33
-            cio = cio + ukr[new_position]
+        if letter in symbols:
+            if new_position > 135:
+                new_position = new_position - 136
+            cio = cio + symbols[new_position]
         else:
-            position = ukr.find(letter)
-            cio = cio + ukr[new_position]
-    print(cio)
+            position = symbols.find(letter)
+            cio = cio + symbols[new_position]
+            print(cio)
