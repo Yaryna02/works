@@ -1,0 +1,7 @@
+from collections import Counter
+
+a = input("a:")
+split_it = a.split()
+Counter = Counter(split_it)
+most_occur = Counter.most_common(5)
+print(most_occur)
