@@ -1,0 +1,10 @@
+#знайти найбільші слова
+def longestWordLength(string):
+    length = 0
+
+    # знайти найбільші слова в рядку
+    for word in string.split():
+        if (len(word) > length):
+            length = len(word)
+
+    return length
