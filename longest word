@@ -1,10 +1,6 @@
-#знайти найбільші слова
-def longestWordLength(string):
-    length = 0
+текст = input("Введіть текст: ")
 
-    # знайти найбільші слова в рядку
-    for word in string.split():
-        if (len(word) > length):
-            length = len(word)
+longest = max(текст.split(), key=len)
 
-    return length
+print("Найдовше слово: ", longest)
+print("Його довжина: ", len(longest))
