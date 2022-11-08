@@ -1,4 +1,4 @@
-my_str = ""
+my_str  = input("Введіть текст:")
 
 words = [word.lower() for word in my_str.split()]
 
