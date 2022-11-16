@@ -1,0 +1,12 @@
+from collections import Counter
+
+текст = input("Введіть текст: ")
+
+split_it = текст.split()
+
+Counter = Counter(split_it)
+
+
+most_occur = Counter.most_common(5)
+
+print(most_occur)
