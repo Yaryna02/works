@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n = 10; // к-сть рядів
+    int i, j; // зміні
+    int max_number = n * n; // максимал. число
+
+    // виведення заголовка
+    printf("  |");
+    for (i = 1; i <= n; i++) {
+        printf("%3d", i);
+    }
+    printf("\n--+");
+    for (i = 1; i <= n; i++) {
+        printf("---");
+    }
+    printf("\n");
+
+    // виведення рядів
+    for (i = 1; i <= n; i++) {
+        printf("%2d|", i);
+        for (j = 1; j <= n; j++) {
+            int product = i * j;
+            printf("%3d", product);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
