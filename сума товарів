@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    float prices[] = {20.50, 19.00, 50.00, 27.80, 2.50, 16.70}; // ціна
+    int item_number; // номер тов.  який вибрав
+    int quantity; // кількість тов.
+    float total_price; // загальна сума
+    
+    printf("Введіть номер товару: ");
+    scanf("%d", &item_number);
+    
+    printf("Введіть кількість: ");
+    scanf("%d", &quantity);
+    
+    total_price = prices[item_number-1] * quantity; // сума = ціна * к-сть
+    printf("Вартість товару: $%.2f\n", total_price);
+    
+    return 0;
+}
