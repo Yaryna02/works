@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    float perimetr, side;
+
+    printf("Введіть периметр квадрата: ");
+    scanf("%f", &perimetr);
+
+// формула периметр / 4 
+    side = perimetr / 4;
+
+    printf("Довжина сторони квадрата з периметром %.2f дорівнює %.2f\n", perimetr, side);
+
+    return 0;
+}
