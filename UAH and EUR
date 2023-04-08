@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+float convert(float amount, int direction) {
+    const float exchange_rate = 40.0; // Курс EUR/UAH
+    float result;
+
+    if (direction == 1) {
+        result = amount / exchange_rate;
+    } else if (direction == 2) {
+        result = amount * exchange_rate;
+    } else {
+        printf("Invalid direction specified.\n");
+        result = 0;
+    }
+
+    return result;
+}
+
+int main() {
+    float amount;
+    int direction;
+
+    printf("Введіть суму : ");
+    scanf("%f", &amount);
+
+    printf("Виберіть дію (1 для UAH на EUR, 2 для EUR на UAH): ");
+    scanf("%d", &direction);
+
+    float result = convert(amount, direction);
+
+    if (result != 0) {
+        printf("%.2f\n", result);
+    }
+
+    return 0;
+}
