@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_CAMERAS 100
+
+struct Camera {
+    char manufacturer[50];
+    char model[50];
+    int hasOpticalZoom;
+    int opticalZoomFactor;
+    char interfaceType[50];
+    int memorySize;
+    float price;
+};
+
+int main() {
+    struct Camera cameras[MAX_CAMERAS];
+    int numCameras;
+    
+    printf("Введіть кількість камер: ");
+    scanf("%d", &numCameras);
+    
+    // Введення даних про фотоапарати
+    for (int i = 0; i < numCameras; i++) {
+        printf("\nCamera %d:\n", i+1);
+        printf("Виробник: ");
+        scanf("%s", cameras[i].manufacturer);
+        printf("Модель: ");
+        scanf("%s", cameras[i].model);
+        printf("Є оптичний зум? (1 якщо Так , 0 якщо Ні): ");
+        scanf("%d", &cameras[i].hasOpticalZoom);
+        if (cameras[i].hasOpticalZoom) {
+            printf("Коефіцієнт оптичного збільшення: ");
+            scanf("%d", &cameras[i].opticalZoomFactor);
+        }
+        printf("Тип інтерфейсу: ");
+        scanf("%s", cameras[i].interfaceType);
+        printf("Розмір пам'яті (в GB): ");
+        scanf("%d", &cameras[i].memorySize);
+        printf("Ціна: ");
+        scanf("%f", &cameras[i].price);
+    }
+    
+    // Пошук та виведення відповідних фотоапаратів
+    printf("\nКамери з пам'яттю більше 1 Гб, оптичним зумом і інтерфейсом USB:\n");
+    for (int i = 0; i < numCameras; i++) {
+        if (cameras[i].memorySize > 1 && cameras[i].hasOpticalZoom && strcmp(cameras[i].interfaceType, "USB") == 0) {
+            printf("\nManufacturer: %s\n", cameras[i].manufacturer);
+            printf("Model: %s\n", cameras[i].model);
+            printf("Optical zoom factor: %d\n", cameras[i].opticalZoomFactor);
+            printf("Interface type: %s\n", cameras[i].interfaceType);
+            printf("Memory size (in GB): %d\n", cameras[i].memorySize);
+            printf("Price: %.2f\n", cameras[i].price);
+        }
+    }
+    
+    return 0;
+}
