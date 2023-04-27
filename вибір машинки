@@ -1,0 +1,117 @@
+print("Ласкаво просимо до програми \"Вибір автомобіля\"!")
+print("Будь ласка, відповідайте на запитання, щоб ми могли дати вам рекомендації.\n")
+
+# Питання про бюджет
+budget = int(input("Який бюджет у вас на придбання автомобіля (в доларах)? "))
+
+# Питання про тип автомобіля
+print("Який тип автомобіля ви розглядаєте?")
+print("1. Седан")
+print("2. Хетчбек")
+print("3. Кросовер")
+print("4. Мінівен")
+car_type = int(input("Виберіть номер варіанту: "))
+
+# Питання про потужність двигуна
+print("Яка потужність двигуна вас цікавить?")
+print("1. До 100 к.с.")
+print("2. Від 100 до 150 к.с.")
+print("3. Понад 150 к.с.")
+engine_power = int(input("Виберіть номер варіанту: "))
+
+# Питання про коробку передач
+print("Яка коробка передач вас цікавить?")
+print("1. Механічна")
+print("2. Автоматична")
+transmission = int(input("Виберіть номер варіанту: "))
+
+# Логіка для вибору автомобіля
+if budget < 10000:
+    print("На жаль, у вас недостатньо коштів для придбання автомобіля.")
+elif budget < 20000:
+    if car_type == 1:
+        print("Вам може підійти Volkswagen Jetta.")
+    elif car_type == 2:
+        print("Вам може підійти Honda Civic.")
+    elif car_type == 3:
+        print("Вам може підійти Subaru Crosstrek.")
+    else:
+        print("Вам може підійти Dodge Grand Caravan.")
+elif budget < 30000:
+    if car_type == 1:
+        print("Вам може підійти Audi A4.")
+    elif car_type == 2:
+        print("Вам може підійти Volkswagen Golf GTI.")
+    elif car_type == 3:
+        print("Вам може підійти Mazda CX-5.")
+    else:
+        print("Вам може підійти Toyota Sienna.")
+else:
+    if car_type == 1:
+        if engine_power == 1:
+            if transmission == 1:
+                print("Вам може підійти BMW 3 Series.")
+            else:
+                print("Вам може підійти Mercedes-Benz C-Class.")
+        elif engine_power == 2:
+            if transmission == 1:
+                print("Вам може підійти Audi S4.")
+            else:
+                print("Вам може підійти Lexus IS 350.")
+        else:
+            if transmission == 1:
+                print("Вам може підійти Cadillac CT5-V.")
+            else:
+                print("Вам може підійти BMW M5.")
+    elif car_type == 2:
+        if engine_power == 1:
+            if transmission == 1:
+                print("Вам може підійти MINI Cooper S.")
+            else:
+                print("Вам може підійти Volkswagen Golf R.")
+        elif engine_power == 2:
+            if transmission == 1:
+                print("Вам може підійти Honda Civic Type R.")
+            else:
+                print("Вам може підійти Hyundai Veloster N.")
+        else:
+            if transmission == 1:
+                print("Вам може підійти Ford Mustang GT.")
+            else:
+                print("Вам може підійти Chevrolet Camaro SS.")
+    elif car_type == 3:
+        if engine_power == 1:
+            if transmission == 1:
+                print("Вам може підійти Toyota RAV4.")
+            else:
+                print("Вам може підійти Subaru Forester.")
+        elif engine_power == 2:
+            if transmission == 1:
+                print("Вам може підійти Jeep Grand Cherokee SRT.")
+            else:
+                print("Вам може підійти Dodge Durango SRT.")
+        else:
+            if transmission == 1:
+                print("Вам може підійти Audi RS Q8.")
+            else:
+                print("Вам може підійти Lamborghini Urus.")
+    else:
+        if engine_power == 1:
+            if transmission == 1:
+                print("Вам може підійти Chrysler Pacifica.")
+            else:
+                print("Вам може підійти Kia Sedona.")
+        elif engine_power == 2:
+            if transmission == 1:
+                print("Вам може підійти Honda Odyssey.")
+            else:
+                print("Вам може підійти Toyota Sienna.")
+# запитати користувача чи хоче він продовжити вибір автомобіля
+answer = input("Хочете продовжити вибір автомобіля? (так / ні) ")
+
+# якщо користувач хоче продовжити, викликаємо функцію ще раз
+if answer.lower() == "так":
+    choose_car()
+# якщо користувач не хоче продовжувати, виходимо з програми
+else:
+    print("Дякуємо за використання програми!")
